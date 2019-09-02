@@ -44,5 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void showSelectedMaterial(Material material){
         Toast.makeText(this, "Membuka " + material.getName(), Toast.LENGTH_SHORT).show();
+        Intent detailActivityIntent = new Intent(MainActivity.this, DetailActivity.class);
+        detailActivityIntent.putExtra(DetailActivity.EXTRA_PRICE, material.getPrice());
+        detailActivityIntent.putExtra(DetailActivity.EXTRA_NAME, material.getName());
+        startActivity(detailActivityIntent);
     }
 }
